@@ -1,0 +1,2670 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>NeuroCar | Experimental Neural Mobility Platform</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+
+  <!-- HEADER -->
+
+  <header class="site-header">
+
+    <div class="nav-container">
+
+      <a href="#" class="brand-logo">
+
+        <img
+          src="https://codehs.com/uploads/6bfacb8b393fb60cabbca0473fab048c"
+          alt="NeuroCar Logo"
+          class="logo-img"
+          style="
+            width: 44px;
+            height: 44px;
+            object-fit: contain;
+            display: block;
+            flex-shrink: 0;
+          "
+        />
+
+        <div class="brand-copy">
+          <span class="logo-title">NEUROCAR</span>
+          <span class="logo-subtitle">RESEARCH PROTOTYPE</span>
+        </div>
+
+      </a>
+
+
+      <nav class="desktop-nav">
+
+        <a href="#concept">
+          Concept
+        </a>
+
+        <a href="#technology">
+          Technology
+        </a>
+
+        <a href="#configurator">
+          Configurator
+        </a>
+
+        <a href="#neural-interface">
+          Neural Interface
+        </a>
+
+        <a href="#safety">
+          Safety
+        </a>
+
+        <a href="#models">
+          Models
+        </a>
+
+        <a href="#simulator">
+          Simulator
+        </a>
+
+        <a href="#research">
+          Research
+        </a>
+
+      </nav>
+
+
+      <a
+        href="#configurator"
+        class="nav-configure-btn"
+      >
+        Configure
+      </a>
+
+
+      <button
+        class="mobile-toggle"
+        id="mobile-toggle"
+        aria-label="Toggle Navigation"
+      >
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+
+
+    <div
+      class="mobile-nav-drawer"
+      id="mobile-drawer"
+    >
+
+      <a href="#concept" class="mobile-link">
+        Concept
+      </a>
+
+      <a href="#technology" class="mobile-link">
+        Technology
+      </a>
+
+      <a href="#configurator" class="mobile-link">
+        Configurator
+      </a>
+
+      <a href="#neural-interface" class="mobile-link">
+        Neural Interface
+      </a>
+
+      <a href="#safety" class="mobile-link">
+        Safety
+      </a>
+
+      <a href="#models" class="mobile-link">
+        Models
+      </a>
+
+      <a href="#simulator" class="mobile-link">
+        Simulator
+      </a>
+
+      <a href="#research" class="mobile-link">
+        Research
+      </a>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- HERO -->
+
+  <section class="hero-section">
+
+    <div class="hero-3d-wrapper">
+
+      <div
+        id="hero-3d-loader"
+        class="canvas-loader"
+      >
+
+        <div class="spinner"></div>
+
+        <span>
+          Loading NeuroCar
+        </span>
+
+      </div>
+
+
+      <div
+        id="hero-3d-fallback"
+        class="hero-fallback-bg hidden"
+      ></div>
+
+
+      <canvas id="hero-canvas"></canvas>
+
+
+      <div class="hero-vignette"></div>
+
+      <div class="hero-grid-overlay"></div>
+
+    </div>
+
+
+
+    <div class="hero-overlay">
+
+      <div class="hero-top-copy">
+
+        <span class="eyebrow">
+          EXPERIMENTAL NEURAL MOBILITY
+        </span>
+
+
+        <h1 class="hero-title">
+          NEURO<span>CAR</span>
+        </h1>
+
+
+        <p class="hero-tagline">
+          Drive With Intention.
+        </p>
+
+
+        <p class="hero-description">
+          An experimental mobility platform exploring how EEG signals,
+          adaptive machine learning, and independent safety systems
+          translate trained neural intent into vehicle interaction.
+        </p>
+
+
+        <div class="hero-actions">
+
+          <a
+            href="#configurator"
+            class="btn btn-primary"
+          >
+            Configure Vehicle
+          </a>
+
+
+          <a
+            href="#technology"
+            class="btn btn-secondary"
+          >
+            Explore Technology
+          </a>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="hero-side-status">
+
+        <div class="system-chip">
+
+          <span class="system-dot"></span>
+
+          NEURAL INTERFACE
+
+          <strong>
+            ACTIVE
+          </strong>
+
+        </div>
+
+
+        <div class="system-chip">
+
+          <span class="system-dot"></span>
+
+          GUARDIAN
+
+          <strong>
+            ONLINE
+          </strong>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="hero-stats-bar">
+
+        <div class="stat-item">
+
+          <span class="stat-value">
+            8
+          </span>
+
+          <span class="stat-label">
+            EEG Channels
+          </span>
+
+        </div>
+
+
+        <div class="stat-item">
+
+          <span class="stat-value">
+            250Hz
+          </span>
+
+          <span class="stat-label">
+            Signal Sampling
+          </span>
+
+        </div>
+
+
+        <div class="stat-item">
+
+          <span class="stat-value">
+            5
+          </span>
+
+          <span class="stat-label">
+            Intent Classes
+          </span>
+
+        </div>
+
+
+        <div class="stat-item">
+
+          <span class="stat-value">
+            &lt; 14ms
+          </span>
+
+          <span class="stat-label">
+            Pipeline Latency
+          </span>
+
+        </div>
+
+
+        <div class="stat-item">
+
+          <span class="stat-value">
+            Guardian
+          </span>
+
+          <span class="stat-label">
+            Safety Layer
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- CONCEPT -->
+
+  <section
+    id="concept"
+    class="section-padding concept-section"
+  >
+
+    <div class="container grid-2">
+
+      <div class="concept-text">
+
+        <span class="section-eyebrow">
+          01 / CONCEPT
+        </span>
+
+
+        <h2 class="section-heading">
+          A Different Vehicle Interface.
+        </h2>
+
+
+        <p class="paragraph">
+
+          NeuroCar studies whether trained non-invasive EEG patterns
+          serve as one additional intent input channel for human mobility.
+
+          The system does not attempt to read thoughts,
+          scan emotions, or decode continuous speech.
+
+        </p>
+
+
+        <p class="paragraph">
+
+          Instead, it recognizes a tightly constrained vocabulary
+          of trained neural execution patterns.
+
+          Every prediction passes through an independent Guardian
+          safety layer before simulated or physical execution.
+
+        </p>
+
+
+        <div class="quote-box">
+
+          <p class="quote-text">
+            "Intent is treated as a request for action,
+            not an imperative command."
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="concept-visual">
+
+        <img
+          src="https://media.istockphoto.com/id/1160605550/photo/aerodynamic-wind-tunnel-sports-car-concept.webp?a=1&b=1&s=612x612&w=0&k=20&c=itwaVu5AUfHQ4rmnu5QMSN0Y0kvoUzw2QKJiOxKUH4A="
+          alt="Concept vehicle aerodynamics"
+          class="responsive-img rounded-img"
+        />
+
+
+        <div class="image-caption">
+
+          <span>
+            01
+          </span>
+
+          Aerodynamic concept study
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- TECHNOLOGY -->
+
+  <section
+    id="technology"
+    class="section-padding dark-section"
+  >
+
+    <div class="container">
+
+      <span class="section-eyebrow">
+        02 / ARCHITECTURE
+      </span>
+
+
+      <h2 class="section-heading">
+        The Intent Pipeline
+      </h2>
+
+
+      <p class="section-lead">
+        Six stages convert trained neural activity
+        into validated vehicle input.
+      </p>
+
+
+
+      <div class="pipeline-horizontal">
+
+
+        <div class="pipeline-step">
+
+          <span class="step-num">
+            01
+          </span>
+
+          <span class="step-icon">
+            ◉
+          </span>
+
+          <h3>
+            Capture
+          </h3>
+
+          <p>
+            8-channel non-invasive EEG sampling at 250Hz.
+          </p>
+
+        </div>
+
+
+        <div class="pipeline-line"></div>
+
+
+        <div class="pipeline-step">
+
+          <span class="step-num">
+            02
+          </span>
+
+          <span class="step-icon">
+            ≋
+          </span>
+
+          <h3>
+            Process
+          </h3>
+
+          <p>
+            Filtering, artifact suppression, and spatial transforms.
+          </p>
+
+        </div>
+
+
+        <div class="pipeline-line"></div>
+
+
+        <div class="pipeline-step">
+
+          <span class="step-num">
+            03
+          </span>
+
+          <span class="step-icon">
+            ◇
+          </span>
+
+          <h3>
+            Predict
+          </h3>
+
+          <p>
+            Neural classifier evaluates five trained intent classes.
+          </p>
+
+        </div>
+
+
+        <div class="pipeline-line"></div>
+
+
+        <div class="pipeline-step">
+
+          <span class="step-num">
+            04
+          </span>
+
+          <span class="step-icon">
+            ◎
+          </span>
+
+          <h3>
+            Adapt
+          </h3>
+
+          <p>
+            Driver calibration compensates for session-level drift.
+          </p>
+
+        </div>
+
+
+        <div class="pipeline-line"></div>
+
+
+        <div class="pipeline-step">
+
+          <span class="step-num">
+            05
+          </span>
+
+          <span class="step-icon">
+            ⬡
+          </span>
+
+          <h3>
+            Validate
+          </h3>
+
+          <p>
+            Guardian compares confidence with environmental state.
+          </p>
+
+        </div>
+
+
+        <div class="pipeline-line"></div>
+
+
+        <div class="pipeline-step">
+
+          <span class="step-num">
+            06
+          </span>
+
+          <span class="step-icon">
+            →
+          </span>
+
+          <h3>
+            Act
+          </h3>
+
+          <p>
+            Approved requests enter the drive-by-wire simulator.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- IMAGE BREAK -->
+
+  <section
+    class="image-break-section"
+    style="
+      background-image:
+      linear-gradient(
+        rgba(3,5,8,.35),
+        rgba(3,5,8,.9)
+      ),
+      url('https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&q=80&w=2000');
+    "
+  >
+
+    <div class="container image-break-content">
+
+      <span class="break-tag">
+        THE HUMAN SIGNAL
+      </span>
+
+
+      <h2 class="break-heading">
+        Neural intent is input.
+        Safety retains authority.
+      </h2>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- 3D CONFIGURATOR -->
+
+  <section
+    id="configurator"
+    class="section-padding configurator-section"
+  >
+
+    <div class="container">
+
+
+      <div class="configurator-header">
+
+        <div>
+
+          <span class="section-eyebrow">
+            03 / VEHICLE CONFIGURATOR
+          </span>
+
+
+          <h2 class="section-heading">
+            Configure Your NeuroCar.
+          </h2>
+
+
+          <p class="section-lead">
+
+            Change model, exterior paint, wheels,
+            cabin color, interior trim, glass,
+            and ambient lighting in real time.
+
+          </p>
+
+        </div>
+
+
+        <div class="configuration-id">
+
+          <span>
+            BUILD
+          </span>
+
+          <strong id="build-code">
+            NC-SENSE-001
+          </strong>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="configurator-shell">
+
+
+        <!-- 3D VIEW -->
+
+        <div class="configurator-view">
+
+          <div
+            id="explorer-3d-loader"
+            class="canvas-loader"
+          >
+
+            <div class="spinner"></div>
+
+            <span>
+              Loading 3D Vehicle
+            </span>
+
+          </div>
+
+
+          <div
+            id="explorer-fallback"
+            class="hero-fallback-bg hidden"
+          ></div>
+
+
+          <canvas id="explorer-canvas"></canvas>
+
+
+
+          <div class="viewport-topbar">
+
+            <div class="viewport-model">
+
+              <span id="active-model-label">
+                NEUROCAR SENSE
+              </span>
+
+              <small id="active-model-description">
+                Neural + environmental awareness
+              </small>
+
+            </div>
+
+
+
+            <div class="viewport-controls">
+
+              <span>
+                DRAG TO ROTATE
+              </span>
+
+              <span>
+                SCROLL TO ZOOM
+              </span>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="viewport-bottom">
+
+
+            <button
+              class="view-button active"
+              data-view="exterior"
+            >
+              Exterior
+            </button>
+
+
+            <button
+              class="view-button"
+              data-view="front"
+            >
+              Front
+            </button>
+
+
+            <button
+              class="view-button"
+              data-view="rear"
+            >
+              Rear
+            </button>
+
+
+            <button
+              class="view-button"
+              data-view="interior"
+            >
+              Interior
+            </button>
+
+
+          </div>
+
+        </div>
+
+
+
+        <!-- CONFIGURATION PANEL -->
+
+        <aside class="configurator-panel">
+
+
+          <!-- MODEL -->
+
+          <div class="config-group">
+
+            <div class="config-heading">
+
+              <span>
+                01
+              </span>
+
+              <h3>
+                Model
+              </h3>
+
+            </div>
+
+
+            <div class="model-selector">
+
+
+              <button
+                class="model-option"
+                data-model="lite"
+              >
+
+                <span>
+                  Lite
+                </span>
+
+                <small>
+                  Core platform
+                </small>
+
+              </button>
+
+
+
+              <button
+                class="model-option active"
+                data-model="sense"
+              >
+
+                <span>
+                  Sense
+                </span>
+
+                <small>
+                  Sensor fusion
+                </small>
+
+              </button>
+
+
+
+              <button
+                class="model-option"
+                data-model="x"
+              >
+
+                <span>
+                  X
+                </span>
+
+                <small>
+                  Research architecture
+                </small>
+
+              </button>
+
+
+            </div>
+
+          </div>
+
+
+
+          <!-- EXTERIOR -->
+
+          <div class="config-group">
+
+
+            <div class="config-heading">
+
+              <span>
+                02
+              </span>
+
+              <h3>
+                Exterior Paint
+              </h3>
+
+              <strong id="paint-name">
+                Neural Yellow
+              </strong>
+
+            </div>
+
+
+
+            <div class="swatch-row">
+
+
+              <button
+                class="paint-swatch active"
+                data-color="#F5C518"
+                data-name="Neural Yellow"
+                style="--swatch:#F5C518"
+                aria-label="Neural Yellow"
+              ></button>
+
+
+              <button
+                class="paint-swatch"
+                data-color="#111318"
+                data-name="Obsidian"
+                style="--swatch:#111318"
+                aria-label="Obsidian"
+              ></button>
+
+
+              <button
+                class="paint-swatch"
+                data-color="#E8E8E5"
+                data-name="Arctic"
+                style="--swatch:#E8E8E5"
+                aria-label="Arctic"
+              ></button>
+
+
+              <button
+                class="paint-swatch"
+                data-color="#273A52"
+                data-name="Midnight Blue"
+                style="--swatch:#273A52"
+                aria-label="Midnight Blue"
+              ></button>
+
+
+              <button
+                class="paint-swatch"
+                data-color="#802C2B"
+                data-name="Signal Red"
+                style="--swatch:#802C2B"
+                aria-label="Signal Red"
+              ></button>
+
+
+              <button
+                class="paint-swatch"
+                data-color="#68705F"
+                data-name="Graphite Sage"
+                style="--swatch:#68705F"
+                aria-label="Graphite Sage"
+              ></button>
+
+
+            </div>
+
+          </div>
+
+
+
+          <!-- WHEELS -->
+
+          <div class="config-group">
+
+            <div class="config-heading">
+
+              <span>
+                03
+              </span>
+
+              <h3>
+                Wheels
+              </h3>
+
+            </div>
+
+
+
+            <div class="choice-grid">
+
+
+              <button
+                class="config-choice active"
+                data-wheel="graphite"
+              >
+
+                <span
+                  class="choice-preview wheel-graphite"
+                ></span>
+
+                <div>
+
+                  <strong>
+                    Graphite
+                  </strong>
+
+                  <small>
+                    20" Aero
+                  </small>
+
+                </div>
+
+              </button>
+
+
+
+              <button
+                class="config-choice"
+                data-wheel="silver"
+              >
+
+                <span
+                  class="choice-preview wheel-silver"
+                ></span>
+
+                <div>
+
+                  <strong>
+                    Machined
+                  </strong>
+
+                  <small>
+                    21" Sport
+                  </small>
+
+                </div>
+
+              </button>
+
+
+
+              <button
+                class="config-choice"
+                data-wheel="black"
+              >
+
+                <span
+                  class="choice-preview wheel-black"
+                ></span>
+
+                <div>
+
+                  <strong>
+                    Black
+                  </strong>
+
+                  <small>
+                    22" Research
+                  </small>
+
+                </div>
+
+              </button>
+
+
+            </div>
+
+          </div>
+
+
+
+          <!-- INTERIOR -->
+
+          <div class="config-group">
+
+            <div class="config-heading">
+
+              <span>
+                04
+              </span>
+
+              <h3>
+                Interior
+              </h3>
+
+              <strong id="interior-name">
+                Carbon Black
+              </strong>
+
+            </div>
+
+
+
+            <div class="swatch-row">
+
+
+              <button
+                class="interior-swatch active"
+                data-color="#17181B"
+                data-name="Carbon Black"
+                style="--swatch:#17181B"
+              ></button>
+
+
+              <button
+                class="interior-swatch"
+                data-color="#D8D1C4"
+                data-name="Cloud"
+                style="--swatch:#D8D1C4"
+              ></button>
+
+
+              <button
+                class="interior-swatch"
+                data-color="#5C4034"
+                data-name="Cognac"
+                style="--swatch:#5C4034"
+              ></button>
+
+
+              <button
+                class="interior-swatch"
+                data-color="#7A2428"
+                data-name="Signal"
+                style="--swatch:#7A2428"
+              ></button>
+
+
+            </div>
+
+          </div>
+
+
+
+          <!-- CABIN TRIM -->
+
+          <div class="config-group">
+
+            <div class="config-heading">
+
+              <span>
+                05
+              </span>
+
+              <h3>
+                Cabin Trim
+              </h3>
+
+            </div>
+
+
+
+            <div class="choice-grid">
+
+
+              <button
+                class="trim-option config-choice active"
+                data-trim="carbon"
+              >
+
+                <span
+                  class="material-preview carbon-preview"
+                ></span>
+
+                <div>
+
+                  <strong>
+                    Carbon Fiber
+                  </strong>
+
+                  <small>
+                    Technical weave
+                  </small>
+
+                </div>
+
+              </button>
+
+
+
+              <button
+                class="trim-option config-choice"
+                data-trim="aluminum"
+              >
+
+                <span
+                  class="material-preview aluminum-preview"
+                ></span>
+
+                <div>
+
+                  <strong>
+                    Aluminum
+                  </strong>
+
+                  <small>
+                    Brushed finish
+                  </small>
+
+                </div>
+
+              </button>
+
+
+
+              <button
+                class="trim-option config-choice"
+                data-trim="wood"
+              >
+
+                <span
+                  class="material-preview wood-preview"
+                ></span>
+
+                <div>
+
+                  <strong>
+                    Walnut
+                  </strong>
+
+                  <small>
+                    Open pore
+                  </small>
+
+                </div>
+
+              </button>
+
+
+            </div>
+
+          </div>
+
+
+
+          <!-- GLASS -->
+
+          <div class="config-group">
+
+            <div class="config-heading">
+
+              <span>
+                06
+              </span>
+
+              <h3>
+                Glass Tint
+              </h3>
+
+              <strong id="tint-value">
+                35%
+              </strong>
+
+            </div>
+
+
+            <input
+              type="range"
+              id="tint-slider"
+              min="0"
+              max="70"
+              value="35"
+              class="config-range"
+            />
+
+
+            <div class="range-labels">
+
+              <span>
+                Clear
+              </span>
+
+              <span>
+                Privacy
+              </span>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- AMBIENT -->
+
+          <div class="config-group">
+
+            <div class="config-heading">
+
+              <span>
+                07
+              </span>
+
+              <h3>
+                Ambient Lighting
+              </h3>
+
+            </div>
+
+
+
+            <div class="ambient-options">
+
+
+              <button
+                class="ambient-swatch active"
+                data-ambient="#F5C518"
+                style="--ambient:#F5C518"
+              ></button>
+
+
+              <button
+                class="ambient-swatch"
+                data-ambient="#47A7FF"
+                style="--ambient:#47A7FF"
+              ></button>
+
+
+              <button
+                class="ambient-swatch"
+                data-ambient="#A775FF"
+                style="--ambient:#A775FF"
+              ></button>
+
+
+              <button
+                class="ambient-swatch"
+                data-ambient="#FF5B57"
+                style="--ambient:#FF5B57"
+              ></button>
+
+
+              <button
+                class="ambient-swatch"
+                data-ambient="#FFFFFF"
+                style="--ambient:#FFFFFF"
+              ></button>
+
+
+            </div>
+
+          </div>
+
+
+
+          <!-- CONFIG SUMMARY -->
+
+          <div class="config-summary">
+
+            <div>
+
+              <small>
+                CURRENT BUILD
+              </small>
+
+              <strong id="configuration-summary">
+                Sense · Neural Yellow · Carbon Black
+              </strong>
+
+            </div>
+
+
+            <button
+              id="reset-config"
+              class="reset-button"
+            >
+              Reset
+            </button>
+
+          </div>
+
+
+        </aside>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- NEURAL INTERFACE -->
+
+  <section
+    id="neural-interface"
+    class="section-padding dark-section"
+  >
+
+    <div class="container">
+
+
+      <div class="dashboard-header-flex">
+
+        <div>
+
+          <span class="section-eyebrow">
+            04 / NEURAL TELEMETRY
+          </span>
+
+          <h2 class="section-heading">
+            Live Telemetry Dashboard
+          </h2>
+
+        </div>
+
+
+        <div class="sim-controls-top">
+
+          <button
+            id="toggle-sim-btn"
+            class="btn btn-primary btn-small"
+          >
+            Pause EEG Stream
+          </button>
+
+
+          <button
+            id="calibrate-btn"
+            class="btn btn-outline btn-small"
+          >
+            Recalibrate
+          </button>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="telemetry-grid">
+
+
+        <div class="telemetry-card card-hero">
+
+          <div class="card-label">
+            CURRENT CLASSIFIED INTENT
+          </div>
+
+
+          <div class="intent-display-wrap">
+
+            <span
+              id="current-intent-text"
+              class="intent-hero-title"
+            >
+              FORWARD
+            </span>
+
+
+            <span
+              id="current-confidence-text"
+              class="intent-hero-val"
+            >
+              94%
+            </span>
+
+          </div>
+
+
+
+          <div class="intent-status-bar">
+
+            <span
+              id="guardian-badge"
+              class="badge badge-success"
+            >
+              GUARDIAN APPROVED
+            </span>
+
+
+            <span class="status-subtext">
+
+              Pipeline latency:
+
+              <strong>
+                14ms
+              </strong>
+
+            </span>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="telemetry-card card-waveforms">
+
+          <div class="card-label">
+            8-CHANNEL EEG OSCILLOGRAM
+          </div>
+
+
+          <div class="waveforms-container">
+
+            <canvas id="eeg-canvas"></canvas>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="telemetry-card">
+
+          <div class="card-label">
+            CLASSIFICATION PROBABILITY
+          </div>
+
+
+          <div class="prob-bars-list">
+
+
+            <div class="prob-item">
+
+              <div class="prob-meta">
+
+                <span>
+                  FORWARD
+                </span>
+
+                <span id="prob-val-forward">
+                  94%
+                </span>
+
+              </div>
+
+
+              <div class="prob-track">
+
+                <div
+                  id="prob-bar-forward"
+                  class="prob-fill"
+                  style="width:94%"
+                ></div>
+
+              </div>
+
+            </div>
+
+
+
+            <div class="prob-item">
+
+              <div class="prob-meta">
+
+                <span>
+                  TURN LEFT
+                </span>
+
+                <span id="prob-val-left">
+                  2%
+                </span>
+
+              </div>
+
+
+              <div class="prob-track">
+
+                <div
+                  id="prob-bar-left"
+                  class="prob-fill"
+                  style="width:2%"
+                ></div>
+
+              </div>
+
+            </div>
+
+
+
+            <div class="prob-item">
+
+              <div class="prob-meta">
+
+                <span>
+                  TURN RIGHT
+                </span>
+
+                <span id="prob-val-right">
+                  1%
+                </span>
+
+              </div>
+
+
+              <div class="prob-track">
+
+                <div
+                  id="prob-bar-right"
+                  class="prob-fill"
+                  style="width:1%"
+                ></div>
+
+              </div>
+
+            </div>
+
+
+
+            <div class="prob-item">
+
+              <div class="prob-meta">
+
+                <span>
+                  SLOW
+                </span>
+
+                <span id="prob-val-slow">
+                  2%
+                </span>
+
+              </div>
+
+
+              <div class="prob-track">
+
+                <div
+                  id="prob-bar-slow"
+                  class="prob-fill"
+                  style="width:2%"
+                ></div>
+
+              </div>
+
+            </div>
+
+
+
+            <div class="prob-item">
+
+              <div class="prob-meta">
+
+                <span>
+                  EMERGENCY STOP
+                </span>
+
+                <span id="prob-val-stop">
+                  1%
+                </span>
+
+              </div>
+
+
+              <div class="prob-track">
+
+                <div
+                  id="prob-bar-stop"
+                  class="prob-fill"
+                  style="width:1%"
+                ></div>
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+
+
+        <div class="telemetry-card">
+
+          <div class="card-label">
+            INTENT DECISION LOG
+          </div>
+
+          <div
+            id="history-log-list"
+            class="history-log"
+          ></div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- IMAGE BREAK -->
+
+  <section
+    class="image-break-section"
+    style="
+      background-image:
+      linear-gradient(
+        rgba(3,5,8,.4),
+        rgba(3,5,8,.88)
+      ),
+      url('https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&q=80&w=2000');
+    "
+  >
+
+    <div class="container image-break-content">
+
+      <span class="break-tag">
+        CONTROL REQUIRES CONSTRAINTS
+      </span>
+
+
+      <h2 class="break-heading">
+
+        No neural prediction reaches the vehicle
+        without independent validation.
+
+      </h2>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- SAFETY -->
+
+  <section
+    id="safety"
+    class="section-padding"
+  >
+
+    <div class="container">
+
+      <span class="section-eyebrow">
+        05 / SAFETY ARCHITECTURE
+      </span>
+
+
+      <h2 class="section-heading">
+        Intent Is Input. Safety Decides.
+      </h2>
+
+
+      <p class="section-lead">
+        Guardian sits between neural inference and vehicle actuation.
+      </p>
+
+
+
+      <div class="guardian-pipeline">
+
+        <div class="g-node">
+          Prediction
+        </div>
+
+        <span>
+          →
+        </span>
+
+        <div class="g-node">
+          Confidence
+        </div>
+
+        <span>
+          →
+        </span>
+
+        <div class="g-node">
+          Stability
+        </div>
+
+        <span>
+          →
+        </span>
+
+        <div class="g-node">
+          Driver
+        </div>
+
+        <span>
+          →
+        </span>
+
+        <div class="g-node">
+          Environment
+        </div>
+
+        <span>
+          →
+        </span>
+
+        <div class="g-node highlighted">
+          Decision
+        </div>
+
+      </div>
+
+
+
+      <div class="safety-cases-grid">
+
+
+        <div class="safety-case-card rejected">
+
+          <div class="case-header">
+
+            <span class="case-val">
+              54%
+            </span>
+
+            <span class="case-intent">
+              TURN LEFT
+            </span>
+
+            <span class="case-badge">
+              REJECTED
+            </span>
+
+          </div>
+
+
+          <h3>
+            Low Confidence
+          </h3>
+
+
+          <p>
+            Classification falls below the minimum execution threshold.
+          </p>
+
+        </div>
+
+
+
+        <div class="safety-case-card rejected">
+
+          <div class="case-header">
+
+            <span class="case-val">
+              96%
+            </span>
+
+            <span class="case-intent">
+              FORWARD
+            </span>
+
+            <span class="case-badge">
+              REJECTED
+            </span>
+
+          </div>
+
+
+          <h3>
+            Obstacle Detected
+          </h3>
+
+
+          <p>
+            High neural confidence is overridden by forward environmental sensing.
+          </p>
+
+        </div>
+
+
+
+        <div class="safety-case-card approved">
+
+          <div class="case-header">
+
+            <span class="case-val">
+              92%
+            </span>
+
+            <span class="case-intent">
+              EMERGENCY STOP
+            </span>
+
+            <span class="case-badge">
+              APPROVED
+            </span>
+
+          </div>
+
+
+          <h3>
+            Priority Command
+          </h3>
+
+
+          <p>
+            Stable emergency-stop intent receives immediate braking priority.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- MODELS -->
+
+  <section
+    id="models"
+    class="section-padding dark-section"
+  >
+
+    <div class="container">
+
+      <span class="section-eyebrow">
+        06 / VEHICLE MODELS
+      </span>
+
+
+      <h2 class="section-heading">
+        Three Research Configurations.
+      </h2>
+
+
+
+      <div class="trims-grid">
+
+
+        <!-- LITE -->
+
+        <article class="trim-card">
+
+          <div class="trim-image-wrap">
+
+            <img
+              src="https://media.istockphoto.com/id/109722688/photo/black-sports-car.webp?a=1&b=1&s=612x612&w=0&k=20&c=enTeqdqQx2DX18qaR2Uo3qmnQA0YbqM2Sm_5qZT-dA4="
+              alt="NeuroCar Lite"
+            />
+
+
+            <span class="trim-number">
+              01
+            </span>
+
+          </div>
+
+
+          <div class="trim-content">
+
+            <span class="trim-category">
+              ENTRY RESEARCH PLATFORM
+            </span>
+
+
+            <h3>
+              NEUROCAR LITE
+            </h3>
+
+
+            <p>
+              Neural driving fundamentals.
+            </p>
+
+
+            <ul>
+
+              <li>
+                5 Intent Classes
+              </li>
+
+              <li>
+                8-Channel EEG
+              </li>
+
+              <li>
+                Guardian Safety Layer
+              </li>
+
+              <li>
+                Manual Physical Override
+              </li>
+
+            </ul>
+
+
+            <a
+              href="#configurator"
+              class="btn btn-outline trim-select"
+              data-model="lite"
+            >
+              Configure Lite
+            </a>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- SENSE -->
+
+        <article class="trim-card featured">
+
+          <div class="trim-featured-label">
+            RECOMMENDED
+          </div>
+
+
+          <div class="trim-image-wrap">
+
+            <img
+              src="https://media.istockphoto.com/id/2270158444/photo/self-driving-car.webp?a=1&b=1&s=612x612&w=0&k=20&c=QkJIT104b_LjLenbFgi4lQ-mP9z2thpChxRdNCVvEZU="
+              alt="NeuroCar Sense"
+            />
+
+
+            <span class="trim-number">
+              02
+            </span>
+
+          </div>
+
+
+          <div class="trim-content">
+
+            <span class="trim-category">
+              SENSOR FUSION PLATFORM
+            </span>
+
+
+            <h3>
+              NEUROCAR SENSE
+            </h3>
+
+
+            <p>
+              Neural input plus environmental awareness.
+            </p>
+
+
+            <ul>
+
+              <li>
+                Adaptive Neural Calibration
+              </li>
+
+              <li>
+                360° LiDAR and Radar
+              </li>
+
+              <li>
+                Driver Monitoring
+              </li>
+
+              <li>
+                Guardian V2
+              </li>
+
+            </ul>
+
+
+            <a
+              href="#configurator"
+              class="btn btn-primary trim-select"
+              data-model="sense"
+            >
+              Configure Sense
+            </a>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- X -->
+
+        <article class="trim-card">
+
+          <div class="trim-image-wrap">
+
+            <img
+              src="https://media.istockphoto.com/id/2252106694/photo/generic-futuristic-car-in-underground-garage.webp?a=1&b=1&s=612x612&w=0&k=20&c=tPFGNrvpI2ziTDw_dHtrTM_5DBDqg4url3ERf2RQ3qA="
+              alt="NeuroCar X"
+            />
+
+
+            <span class="trim-number">
+              03
+            </span>
+
+          </div>
+
+
+          <div class="trim-content">
+
+            <span class="trim-category">
+              ADVANCED RESEARCH
+            </span>
+
+
+            <h3>
+              NEUROCAR X
+            </h3>
+
+
+            <p>
+              Full experimental architecture.
+            </p>
+
+
+            <ul>
+
+              <li>
+                Personal Neural Profiles
+              </li>
+
+              <li>
+                Multimodal Sensor Array
+              </li>
+
+              <li>
+                Autonomous Co-Pilot
+              </li>
+
+              <li>
+                Research API Access
+              </li>
+
+            </ul>
+
+
+            <a
+              href="#configurator"
+              class="btn btn-outline trim-select"
+              data-model="x"
+            >
+              Configure X
+            </a>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- SIMULATOR -->
+
+  <section
+    id="simulator"
+    class="section-padding"
+  >
+
+    <div class="container">
+
+
+      <div class="sim-header">
+
+        <div>
+
+          <span class="section-eyebrow">
+            07 / VIRTUAL ENVIRONMENT
+          </span>
+
+
+          <h2 class="section-heading">
+            Engineering Simulator
+          </h2>
+
+        </div>
+
+
+
+        <div class="sim-hud-status">
+
+          <span>
+
+            MODE
+
+            <strong>
+              EEG + MANUAL
+            </strong>
+
+          </span>
+
+
+          <span>
+
+            GUARDIAN
+
+            <strong>
+              ACTIVE
+            </strong>
+
+          </span>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="sim-wrapper">
+
+
+        <div class="sim-canvas-container">
+
+          <canvas
+            id="sim-canvas"
+            width="900"
+            height="450"
+          ></canvas>
+
+
+          <div class="sim-overlay-hud">
+
+            <div id="sim-hud-speed">
+              0 MPH
+            </div>
+
+
+            <div
+              id="sim-hud-obstacle"
+              class="hud-alert hidden"
+            >
+              OBSTACLE DETECTED
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="sim-controls-panel">
+
+          <span class="panel-label">
+            DRIVE CONTROLS
+          </span>
+
+
+          <div class="sim-btn-grid">
+
+            <div></div>
+
+
+            <button
+              class="sim-btn"
+              id="btn-cmd-forward"
+            >
+              ▲
+            </button>
+
+
+            <div></div>
+
+
+            <button
+              class="sim-btn"
+              id="btn-cmd-left"
+            >
+              ◀
+            </button>
+
+
+            <button
+              class="sim-btn stop"
+              id="btn-cmd-stop"
+            >
+              STOP
+            </button>
+
+
+            <button
+              class="sim-btn"
+              id="btn-cmd-right"
+            >
+              ▶
+            </button>
+
+
+            <div></div>
+
+
+            <button
+              class="sim-btn"
+              id="btn-cmd-slow"
+            >
+              ▼
+            </button>
+
+
+            <div></div>
+
+          </div>
+
+
+
+          <button
+            id="btn-toggle-obstacle"
+            class="btn btn-outline btn-full"
+          >
+            Spawn Obstacle
+          </button>
+
+
+          <button
+            id="btn-trigger-eeg-cmd"
+            class="btn btn-primary btn-full"
+          >
+            Send EEG Command
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- RESEARCH -->
+
+  <section
+    id="research"
+    class="section-padding research-section"
+  >
+
+    <div class="container">
+
+      <span class="section-eyebrow">
+        08 / RESEARCH
+      </span>
+
+
+      <h2 class="section-heading">
+        Neural Network Benchmarks.
+      </h2>
+
+
+      <p class="section-lead">
+
+        Comparative evaluation of candidate
+        EEG classification architectures.
+
+      </p>
+
+
+
+      <div class="research-grid">
+
+
+        <div class="chart-card">
+
+          <div class="card-label">
+            ACCURACY VS INFERENCE LATENCY
+          </div>
+
+
+          <div class="chart-wrapper">
+
+            <canvas id="ai-chart"></canvas>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="research-table-card">
+
+          <div class="card-label">
+            BENCHMARK SUMMARY
+          </div>
+
+
+          <div class="research-table">
+
+
+            <div class="research-row header">
+
+              <span>
+                Model
+              </span>
+
+              <span>
+                Accuracy
+              </span>
+
+              <span>
+                Latency
+              </span>
+
+            </div>
+
+
+
+            <div class="research-row">
+
+              <span>
+                EEG-Conformer
+              </span>
+
+              <strong>
+                89.4%
+              </strong>
+
+              <span>
+                12ms
+              </span>
+
+            </div>
+
+
+
+            <div class="research-row active">
+
+              <span>
+                EEGNet
+              </span>
+
+              <strong>
+                84.2%
+              </strong>
+
+              <span>
+                8ms
+              </span>
+
+            </div>
+
+
+
+            <div class="research-row">
+
+              <span>
+                Bi-LSTM
+              </span>
+
+              <strong>
+                81.0%
+              </strong>
+
+              <span>
+                18ms
+              </span>
+
+            </div>
+
+
+
+            <div class="research-row">
+
+              <span>
+                SVM
+              </span>
+
+              <strong>
+                68.5%
+              </strong>
+
+              <span>
+                3ms
+              </span>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- PRIVACY -->
+
+  <section class="section-padding">
+
+    <div class="container grid-2">
+
+
+      <div>
+
+        <span class="section-eyebrow">
+          09 / DATA PRIVACY
+        </span>
+
+
+        <h2 class="section-heading">
+          Local Neural Processing.
+        </h2>
+
+
+        <p class="paragraph">
+
+          Raw neural telemetry remains inside the vehicle.
+
+          Signal inference executes on local edge hardware,
+          and short-term waveform buffers are overwritten.
+
+        </p>
+
+      </div>
+
+
+
+      <div class="privacy-points">
+
+
+        <div class="privacy-card">
+
+          <span>
+            01
+          </span>
+
+          <h3>
+            Edge Inference
+          </h3>
+
+          <p>
+            EEG processing occurs inside the vehicle.
+          </p>
+
+        </div>
+
+
+
+        <div class="privacy-card">
+
+          <span>
+            02
+          </span>
+
+          <h3>
+            Ephemeral Buffer
+          </h3>
+
+          <p>
+            Raw signal data is overwritten after processing.
+          </p>
+
+        </div>
+
+
+
+        <div class="privacy-card">
+
+          <span>
+            03
+          </span>
+
+          <h3>
+            Physical Override
+          </h3>
+
+          <p>
+            Manual steering and braking remain available.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- FOOTER -->
+
+  <footer class="site-footer">
+
+    <div class="container footer-content">
+
+
+      <div
+        class="footer-brand"
+        style="
+          display: flex;
+          align-items: flex-start;
+          gap: 14px;
+        "
+      >
+
+
+        <img
+          src="https://codehs.com/uploads/6bfacb8b393fb60cabbca0473fab048c"
+          alt="NeuroCar Logo"
+          class="footer-logo-img"
+          style="
+            width: 52px;
+            height: 52px;
+            object-fit: contain;
+            display: block;
+            flex-shrink: 0;
+          "
+        />
+
+
+        <div>
+
+          <span class="logo-title">
+            NEUROCAR
+          </span>
+
+
+          <p>
+            Experimental neural mobility research platform.
+          </p>
+
+        </div>
+
+
+      </div>
+
+
+
+      <div class="footer-links">
+
+        <a href="#technology">
+          Technology
+        </a>
+
+        <a href="#configurator">
+          Configurator
+        </a>
+
+        <a href="#safety">
+          Safety
+        </a>
+
+        <a href="#research">
+          Research
+        </a>
+
+      </div>
+
+
+    </div>
+
+
+
+    <div class="container footer-bottom">
+      © 2026 NeuroCar Research Lab
+    </div>
+
+  </footer>
+
+
+
+  <script
+    type="module"
+    src="app.js"
+  ></script>
+
+
+</body>
+
+</html>
