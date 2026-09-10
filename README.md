@@ -1,26 +1,24 @@
-# NeuroCar
+NeuroCar
 
-Experimental neural mobility research prototype website.
+NeuroCar is a concept car website created for a school project. The project explores how EEG signals, machine learning, and independent safety systems might work together as part of a future vehicle interface.
 
-## Upload these files to GitHub
+The website presents the idea through an interactive experience instead of a basic report. It includes a 3D concept car, a vehicle configurator, an EEG signal simulation, a safety system section, and a driving simulator. The goal was to show how a futuristic transportation concept could be explained through both design and code.
 
-- `index.html`
-- `styles.css`
-- `app.js`
-- `README.md`
 
-The 3D vehicle model loads remotely, so no separate `car.glb` upload is required.
+<img width="863" height="437" alt="image" src="https://github.com/user-attachments/assets/c1aa6fda-1eca-4d68-97dc-55facd02d6ee" />
 
-## Run locally
 
-Serve the folder through a local web server because the site uses JavaScript modules.
+What I Learned
 
-```bash
-python -m http.server 8000
-```
+Through this project, I learned how to:
 
-Then visit `http://localhost:8000`.
+Build a complete website using HTML, CSS, and JavaScript.
+Use Three.js to display and control a 3D model.
+Create interactive buttons, controls, animations, and simulations.
+Organize a large website into clear sections and features.
+Make a website responsive across different screen sizes.
+Work with external libraries and online assets.
+Debug issues involving file paths, scripts, styling, and 3D content.
+Present ideas from machine learning, neuroscience, and vehicle safety through an interactive project.
 
-## GitHub Pages
-
-Upload these files to the repository root. In GitHub, open Settings, then Pages, and deploy from the `main` branch root.
+This project helped me improve my web development skills and gave me more experience turning a technical idea into a working visual prototype.
